@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b5d55fb9f210c54e9694f4c18d0da31, type: 3}
+  m_Name: New Weapon
+  m_EditorClassIdentifier: 
+  _itemName: Bersek
+  _itemDescription: Bersek
+  _icon: {fileID: 1614369336, guid: cd9d974472d491340bd0b2a12da7cc1f, type: 3}
+  _damage: 10
+  _speed: 12
+  _attackRange: 2
+  _prefabWeapons: {fileID: 1191375397838959335, guid: 3227f0b5db7aa6940995f47e2e59bb49, type: 3}
+  _startTimeAttack: 2
+  _currentTimeAttack: -1.5429484
