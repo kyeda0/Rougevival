@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
-   [field: SerializeField] public  GameObject _inventoryPanel { get; private set; }
+   [field: SerializeField] public  GameObject _inventoryPanel;
    [field: SerializeField] public GameObject _inventorySlotPrefab {get;private set;}
    [field: SerializeField] public Transform _inventoryGrid {get; private set;}
     private Inventory _inventory;
@@ -16,11 +16,9 @@ public class InventoryUI : MonoBehaviour
          UpdateInventory();
    }
 
-
    public void UpdateInventory(){
         ClearItemSlots();
-        CreateItemSlot();
-        
+        CreateItemSlot();  
    }
 
 
@@ -32,7 +30,7 @@ public class InventoryUI : MonoBehaviour
         }
    }
 
-   private void CreateItemSlot()
+   public void CreateItemSlot()
    {
         foreach (ItemsData item in _inventory._items)
         {
