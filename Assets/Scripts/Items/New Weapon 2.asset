@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b5d55fb9f210c54e9694f4c18d0da31, type: 3}
-  m_Name: New Weapon
+  m_Name: New Weapon 2
   m_EditorClassIdentifier: 
-  _itemName: Bersek
-  _icon: {fileID: 1614369336, guid: cd9d974472d491340bd0b2a12da7cc1f, type: 3}
-  _itemAmount: 1
+  _itemName: 321
+  _icon: {fileID: -1678404811, guid: 856458a52fd0fd040aa7d35fa965b4a5, type: 3}
+  _itemAmount: 0
   _isStackable: 0
   _maxStackableAmount: 1
-  _damage: 10
-  _speed: 12
-  _attackRange: 2
-  _prefabWeapons: {fileID: 1191375397838959335, guid: 3227f0b5db7aa6940995f47e2e59bb49, type: 3}
-  _startTimeAttack: 2
-  _currentTimeAttack: 0.14935999
+  _damage: 0
+  _speed: 0
+  _attackRange: 0
+  _prefabWeapons: {fileID: 0}
+  _startTimeAttack: 0
+  _currentTimeAttack: 0

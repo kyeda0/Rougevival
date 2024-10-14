@@ -43,22 +43,23 @@ public class InventoryUI : MonoBehaviour
    private void SetItemSlot(GameObject _itemSlot, ItemsData _item)
    {
         Image _itemIcon = _itemSlot.transform.Find("ItemIcon").GetComponent<Image>();
+        Text _itemAmountText = _itemSlot.transform.Find("ItemAmount").GetComponent<Text>();
 
         if (_itemIcon != null){
-            _itemIcon.sprite =  _item._icon;
-        }
+            _itemIcon.sprite =  _item._icon;}
+
+        if(_itemAmountText !=null){
+          _itemAmountText.text = _item._itemAmount > 1 ? _item._itemAmount.ToString() : "";}
+
         Button _itemButton = _itemSlot.GetComponentInChildren<Button>();
 
-        if( _itemButton != null )
-        {
-            _itemButton.onClick.AddListener(() => UseItem(_item));
-        }
+        if( _itemButton != null ){
+            _itemButton.onClick.AddListener(() => UseItem(_item));}
    }
 
    private void UseItem(ItemsData _item)
    {
         if(_item is WeaponData){_character.EquipWeapon(_item as WeaponData);}
-        Debug.Log("Взял оружие");
         UpdateInventory();
    }
 

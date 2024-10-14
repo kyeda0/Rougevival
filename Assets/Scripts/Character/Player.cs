@@ -6,7 +6,7 @@ public class Player : Character
     [SerializeField] private float _speed;
     [SerializeField] private  Transform _weaponSlot;
     [SerializeField] private  GameObject _currentWeapon ;
-     public  WeaponData _weaponData;    
+    public  WeaponData _weaponData;    
     void Start()
     {
         InitializeCharacter(_maxHealth, _speed);
