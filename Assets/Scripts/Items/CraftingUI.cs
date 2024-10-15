@@ -12,11 +12,9 @@ public class CraftingUI : MonoBehaviour
     [SerializeField] private Transform _recipesContainer;
 
     private Inventory _inventory;
-    private InventoryUI _inventoryUI;
 
     private void Start()
     {   _inventory = FindAnyObjectByType<Player>().GetComponent<Inventory>();
-       _inventoryUI = GameObject.Find("Inventory").GetComponent<InventoryUI>();
         UpdateCraftingUI();
     }
 
@@ -51,11 +49,11 @@ public class CraftingUI : MonoBehaviour
 
     private void CraftItem(RecipeData _recipeData){
         if(_inventory.HasIngredient(_recipeData)){
-            _inventory.AddItem(_recipeData._resultItem);
             _inventory.RemoveIngredients(_recipeData);
+            _inventory.AddItem(_recipeData._resultItem);
             Debug.Log("Предмет скравчен:"+ _recipeData._resultItem._itemName);
         }
-        else{Debug.Log("Недостаточно ресурсов");}
+        ///else//{/* Debug.Log("Недостаточно ресурсов");} */
     }
     private RecipeData[] GetAllRecipe(){
         return Resources.LoadAll<RecipeData>("Recipes");

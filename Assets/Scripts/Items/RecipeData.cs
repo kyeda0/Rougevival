@@ -15,6 +15,6 @@ public class RecipeData : ScriptableObject
 [System.Serializable]
 public class ItemIngredient{
     public ItemsData _itemIngredient;
-    public int _amount;
+    public float  _amount;
 }
 

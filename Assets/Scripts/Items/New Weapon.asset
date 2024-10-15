@@ -22,4 +22,4 @@ MonoBehaviour:
   _attackRange: 2
   _prefabWeapons: {fileID: 1191375397838959335, guid: 3227f0b5db7aa6940995f47e2e59bb49, type: 3}
   _startTimeAttack: 2
-  _currentTimeAttack: 0.14935999
+  _currentTimeAttack: 1.4173973

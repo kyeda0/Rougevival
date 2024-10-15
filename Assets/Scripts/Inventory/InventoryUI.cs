@@ -49,7 +49,7 @@ public class InventoryUI : MonoBehaviour
             _itemIcon.sprite =  _item._icon;}
 
         if(_itemAmountText !=null){
-          _itemAmountText.text = _item._itemAmount > 1 ? _item._itemAmount.ToString() : "";}
+          _itemAmountText.text = _item._itemAmount >= 1 ? _item._itemAmount.ToString() : "";}
 
         Button _itemButton = _itemSlot.GetComponentInChildren<Button>();
 

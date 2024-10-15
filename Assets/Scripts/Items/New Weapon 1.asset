@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemName: 321
   _icon: {fileID: 117732076, guid: ce6d9577446a47349bcf02b34307040d, type: 3}
-  _itemAmount: 1
+  _itemAmount: 0
   _isStackable: 0
   _maxStackableAmount: 1
   _damage: 100
@@ -22,4 +22,4 @@ MonoBehaviour:
   _attackRange: 1
   _prefabWeapons: {fileID: 7668231964660255255, guid: ff2f1cdd4d8b7c742a797b565f532a81, type: 3}
   _startTimeAttack: 0
-  _currentTimeAttack: -29.234621
+  _currentTimeAttack: -2.1240332

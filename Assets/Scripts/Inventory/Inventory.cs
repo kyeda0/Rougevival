@@ -5,31 +5,42 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public  List<ItemsData> _items = new List<ItemsData>();
-    [SerializeField] private float _maxSlots ;   
-    [SerializeField] private float _maxAmountItem;
+    [SerializeField] public float _maxSlots ;   
+    [SerializeField] public float _maxAmountItem;
     private InventoryUI _inventoryUI;
 
-    private void Start(){_inventoryUI = GameObject.Find("Inventory").GetComponent<InventoryUI>();}
+    private void Start()
+    {
+        _inventoryUI = GameObject.Find("Inventory").GetComponent<InventoryUI>();
+    }
     public void AddItem(ItemsData _newItem){
         if(_items.Count >= _maxSlots){
             Debug.Log("Инвентарь переполнен");
             return;
         }
-        else{_items.Add(_newItem);}
         ItemsData _existingItem = _items.Find(item => item._itemName == _newItem._itemName);
             if(_existingItem !=null){
-                if(_existingItem._itemAmount + _newItem._itemAmount <= _maxAmountItem){_existingItem._itemAmount += _newItem._itemAmount;}
-
+                if(_existingItem._itemAmount + _newItem._itemAmount <= _maxAmountItem)
+                {   _existingItem._itemAmount += _newItem._itemAmount; 
+                    Debug.Log(_existingItem._itemAmount);
+                }
                 else{Debug.Log("Превышен лимит по количеству предметов в слоте");}
             }
+            else
+            {
+                _items.Add(_newItem);
+                _newItem._itemAmount++;  
+            }
+
         _inventoryUI.UpdateInventory();
     }
 
     public void RemoveItem(ItemsData _itemToRemove){
         ItemsData _existingItem = _items.Find(item => item._itemName == _itemToRemove._itemName);
         if(_existingItem != null){
-            _existingItem._itemAmount--;
+            _existingItem._itemAmount --;
             if(_existingItem._itemAmount <=0){
+                Debug.Log("тут4");
                 _items.Remove(_existingItem);
             }
         }
@@ -38,10 +49,9 @@ public class Inventory : MonoBehaviour
 
      public void RemoveIngredients(RecipeData _recipeData)
     {
-        foreach (var ingredient in _recipeData._ingredients)
+        foreach (var _ingredient in _recipeData._ingredients)
         {
-            RemoveItem(ingredient._itemIngredient);
-
+            RemoveItem(_ingredient._itemIngredient);
         }
         _inventoryUI.UpdateInventory();
     }
@@ -50,7 +60,10 @@ public class Inventory : MonoBehaviour
         foreach (var _ingredient in _recipeData._ingredients)
         {
             ItemsData _existingItem = _items.Find(item => item._itemName == _ingredient._itemIngredient._itemName);
-            if(_existingItem == null || _existingItem._itemAmount <=_ingredient._amount){return false;}
+            if(_existingItem == null || _existingItem._itemAmount <_ingredient._amount){
+                Debug.Log("Не хватает:"+ _ingredient._itemIngredient._itemName);   
+                return false;
+            }
         }
         return true;
     }

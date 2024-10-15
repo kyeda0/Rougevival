@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5d55fb9f210c54e9694f4c18d0da31, type: 3}
   m_Name: New Weapon 2
   m_EditorClassIdentifier: 
-  _itemName: 321
+  _itemName: 0000
   _icon: {fileID: -1678404811, guid: 856458a52fd0fd040aa7d35fa965b4a5, type: 3}
   _itemAmount: 0
   _isStackable: 0
