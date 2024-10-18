@@ -10,44 +10,29 @@ public class UIController : MonoBehaviour
     [SerializeField] private Sprite[] healthSprites;
     [SerializeField] private Sprite[] manaSprites;
 
-    private int currentHealth;
-    private int currentMana;
+    private AllHealth AllHealth;
 
     void Start()
     {
-        currentHealth = 100;
-        currentMana = 100;
-        UpdateHealthBar();
-        UpdateManaBar();    
+        UpdateHealthBar(100);
+        UpdateManaBar(100);    
     }
 
-    public void UpdateUI(int health, int mana)
+    public void UpdateUI(float health, float mana)
     {
-        UpdateManaUI(health);
-        UpdateHealthUI(mana);
+        UpdateManaBar(mana);
+        UpdateHealthBar(health);
     }
 
-    private void UpdateHealthUI(int health)
+    private void UpdateHealthBar(float health)
     {
-        currentHealth = health;
-        UpdateHealthBar();
-    }
-
-    private void UpdateManaUI(int mana)
-    {
-        currentMana = mana;
-        UpdateManaBar();
-    }
-
-    private void UpdateHealthBar()
-    {
-        int index = Mathf.Clamp(currentHealth / 20, 0, 4);
+        int index = Mathf.Clamp(Mathf.RoundToInt(health) / 20, 0, 4);
         healthBar.sprite = healthSprites[index];
     }
 
-    private void UpdateManaBar()
+    private void UpdateManaBar(float mana)
     {
-        int index = Mathf.Clamp(currentMana / 20, 0, 4);
+        int index = Mathf.Clamp(Mathf.RoundToInt(mana) / 20, 0, 4);
         manaBar.sprite = manaSprites[index];
     }
 }

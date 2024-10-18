@@ -23,5 +23,4 @@ public class AllHealth
     public bool IsDead(){
         return _currentHealth <= 0;
     }
-
 }

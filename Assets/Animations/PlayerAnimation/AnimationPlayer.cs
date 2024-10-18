@@ -18,15 +18,15 @@ public class AnimationPlayer : MonoBehaviour
         
         else if(Input.GetKeyUp(_upWalk)){_animator.SetTrigger("idleUp");}
          
-         if(Input.GetKeyDown(_downWalk)){_animator.SetTrigger("downWalk");}
+        if(Input.GetKeyDown(_downWalk)){_animator.SetTrigger("downWalk");}
         
         else if(Input.GetKeyUp(_downWalk)){_animator.SetTrigger("idle");}
          
-         if(Input.GetKeyDown(_rightWalk)){_animator.SetTrigger("rightWalk");}
+        if(Input.GetKeyDown(_rightWalk)){_animator.SetTrigger("rightWalk");}
         
         else if(Input.GetKeyUp(_rightWalk)){_animator.SetTrigger("IdleRight");}
          
-         if(Input.GetKeyDown(_leftWalk)){_animator.SetTrigger("leftWalk");}
+        if(Input.GetKeyDown(_leftWalk)){_animator.SetTrigger("leftWalk");}
         
         else if(Input.GetKeyUp(_leftWalk)){_animator.SetTrigger("idleLeft");}
     }
