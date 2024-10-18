@@ -9,19 +9,18 @@ public class HealthController : MonoBehaviour
     private  void Awake()
     {
         _allHealthView = GetComponent<AllHealthView>();
-        // _UI = GameObject.FindWithTag("UI").GetComponent<UIController>();
     }
 
     public void Initialize(float maxHealth){
         _allHealth = new AllHealth (maxHealth);
-        _allHealthView.UpdateHealthBar(_allHealth._currentHealth,_allHealth.maxHealth);
+        _allHealthView.UpdateHealthBar(_allHealth._currentHealth);
 
     }
 
     public void TakeDamage(float _damage){
         _allHealth.TakeDamage(_damage);
 
-        _allHealthView.UpdateHealthBar(_allHealth._currentHealth,_allHealth.maxHealth);
+        _allHealthView.UpdateHealthBar(_allHealth._currentHealth);
         
         // _UI.UpdateUI(_allHealth._currentHealth, 100); 
 
@@ -33,7 +32,7 @@ public class HealthController : MonoBehaviour
     public void Heal(float _amount)
     {
         _allHealth.Heal(_amount);
-        _allHealthView.UpdateHealthBar(_allHealth._currentHealth, _allHealth.maxHealth);
+        _allHealthView.UpdateHealthBar(_allHealth._currentHealth);
     }
 
     private void Kill(){

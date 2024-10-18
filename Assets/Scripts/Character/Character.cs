@@ -5,7 +5,7 @@ public class Character : MonoBehaviour
     protected HealthController _healthController;
     protected MovementController _movementController;
 
-    protected void InitializeCharacter(float _maxHealth, float _speed = 0){
+    protected void InitializeCharacter(float _maxHealth = 0, float _speed = 0){
         _movementController = GetComponent<MovementController>();
         _healthController = GetComponent<HealthController>();
 
