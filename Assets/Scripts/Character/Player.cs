@@ -15,6 +15,10 @@ public class Player : Character
     void Update()
     {
         Movement(_speed);
+        if(Input.GetKey(KeyCode.Space))
+        {
+            TakeDamage(2);
+        }
     }
 
     
